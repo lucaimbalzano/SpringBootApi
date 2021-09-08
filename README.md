@@ -39,6 +39,7 @@ You can copy the schema here: https://github.com/lucaimbalzano/Ecommerce/blob/de
 I used Mysql as db, i used pretty simple diagram so i could do the application quickly and for some reasons i didn't linked all table i preffered take separated voluntarily, is an example-app.
 
 ## URI📌
+```
 +-----------------------------------+----------------------------------------------------------------------------+
 | METHOD                            | URI                                                                        |
 +===================================+============================================================================+
@@ -74,7 +75,7 @@ I used Mysql as db, i used pretty simple diagram so i could do the application q
 | DELETE                            | | ``$ dvc remote add myremote -d s3://mybucket/image_cnn``                 |
 |                                   | |                                                                          |
 +-----------------------------------+----------------------------------------------------------------------------+
-
+```
 ## Browser Support API📌
 
 At present, i officially aim to support the last two versions of the following browsers:
