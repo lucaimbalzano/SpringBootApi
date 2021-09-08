@@ -5,7 +5,7 @@ SpringBoot application RESTful api
   <img alt="Spring" src="https://img.shields.io/badge/-Spring-00FF00?style=flat-square&logo=hibernate&logoColor=green" /> <img alt="Java" src="https://img.shields.io/badge/-Java-DD0031?style=flat-square&logo=java&logoColor=white" />
   <img alt="Hibernate" src="https://img.shields.io/badge/-Hibernate-00FF00?style=flat-square&logo=hibernate&logoColor=green" />
   <img alt="Mysql" src="https://img.shields.io/badge/-mysql-blue?style=flat-square&logo=mysql&logoColor=green" />
-  
+
 
 ## Database📌
 you can create the table by using this query [Mysql Dialect]:
@@ -77,7 +77,6 @@ You can Insert some data using this query [___INSERT_DATA___](https://github.com
 ```
 ## Browser Support API📌
 
-At present, i officially aim to support the last two versions of the following browsers:
 
 <img src="https://github.com/creativetimofficial/public-assets/blob/master/logos/chrome-logo.png?raw=true" width="64" height="64">  <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/edge-logo.png" width="64" height="64"> <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/safari-logo.png" width="64" height="64"> <img src="https://raw.githubusercontent.com/creativetimofficial/public-assets/master/logos/opera-logo.png" width="64" height="64">
 
