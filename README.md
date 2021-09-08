@@ -2,41 +2,36 @@
 SpringBoot application RESTful api
 
 
-# Ecommerce <img src="https://user-images.githubusercontent.com/45575898/131373141-7311f706-2c7c-4a27-85fa-38357b37cf25.png"  width="70" height="70" />
-
-  <img alt="angular" src="https://img.shields.io/badge/-Angular-DD0031?style=flat-square&logo=angular&logoColor=white" /> <img alt="npm" src="https://img.shields.io/badge/-NPM-CB3837?style=flat-square&logo=npm&logoColor=white" />
-  <img alt="html5" src="https://img.shields.io/badge/-HTML5-E34F26?style=flat-square&logo=html5&logoColor=white" />
-  <img alt="TypeScript" src="https://img.shields.io/badge/-TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white" />
-  <img alt="Css3" src="https://img.shields.io/badge/-CSS3-00FF00?style=flat-square&logo=css3&logoColor=brown" />
-  <img alt="Javascript" src="https://img.shields.io/badge/-Javascript-ADD8E6?style=flat-square&logo=javascript&logoColor=black" />
+  <img alt="Spring" src="https://img.shields.io/badge/-Spring-00FF00?style=flat-square&logo=hibernate&logoColor=green" />
   <img alt="Java" src="https://img.shields.io/badge/-Java-DD0031?style=flat-square&logo=java&logoColor=white" />
   <img alt="Hibernate" src="https://img.shields.io/badge/-Hibernate-00FF00?style=flat-square&logo=hibernate&logoColor=green" />
-
-## Preview📌
-![image](https://user-images.githubusercontent.com/45575898/131372608-8f01300b-a6df-4a7a-94df-d3922e34944f.png)
-![image](https://user-images.githubusercontent.com/45575898/131372716-f77cff17-3604-47b1-9b27-3b36061565ff.png)
-![image](https://user-images.githubusercontent.com/45575898/131372790-06e00298-6cdc-4491-880b-4d6828734637.png)
-
-## Frontend📌
-
-Run `npm install` to install all the dependencies
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.11.
-
-## Backend📌
-
-Run `mvn clean install` to install all the dependencies
-Then change the database properties in `Hibernate.cfg.xml` for the connection, and `build` the project and add the `.war` file into a Server,
-i used wildfly as web-server
+  <img alt="Mysql" src="https://img.shields.io/badge/-mysql-blue?style=flat-square&logo=mysql&logoColor=green" />
+  
 
 ## Database📌
-![image](https://user-images.githubusercontent.com/45575898/131374429-f2c89d64-5123-4dee-a302-cdd5206c3bea.png)
+you can create the table by using this query [Mysql Dialect]:
+```
+CREATE TABLE `customer` (
+  `customer_id` smallint unsigned NOT NULL AUTO_INCREMENT,
+  `store_id` tinyint unsigned DEFAULT NULL,
+  `first_name` varchar(45) NOT NULL,
+  `last_name` varchar(45) NOT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `address_id` smallint unsigned NOT NULL,
+  `active` tinyint(1) NOT NULL DEFAULT '1',
+  `create_date` datetime NOT NULL,
+  `last_update` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (`customer_id`),
+  KEY `idx_fk_store_id` (`store_id`),
+  KEY `idx_fk_address_id` (`address_id`),
+  KEY `idx_last_name` (`last_name`),
+  CONSTRAINT `fk_customer_address` FOREIGN KEY (`address_id`) REFERENCES `address` (`address_id`) ON DELETE RESTRICT ON UPDATE CASCADE,
+  CONSTRAINT `fk_customer_store` FOREIGN KEY (`store_id`) REFERENCES `store` (`store_id`) ON DELETE RESTRICT ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=601 DEFAULT CHARSET=utf8;
 
-You can copy the schema here: https://github.com/lucaimbalzano/Ecommerce/blob/de2b9d53cb5658ad3a0c865f9e100c4d424613bf/ECOMMERCE_SCHEMA-TABLES.SQL
+```
+You can Insert some data using this query [___INSERT_DATA___](https://github.com/lucaimbalzano/SpringBootApi/blob/main/INSERT_customer.sql)
 
-I used Mysql as db, i used pretty simple diagram so i could do the application quickly and for some reasons i didn't linked all table i preffered take separated voluntarily, is an example-app.
 
 ## URI📌
 ```
@@ -52,6 +47,7 @@ I used Mysql as db, i used pretty simple diagram so i could do the application q
 | POST                              | | ``http://localhost:8080/api/customers``                                  |
 |                                   | |                                                                          | 
 |                                   | |       ``{                                           ``                   |
+|                                   | |       ``   "customer_id": 0 ,                       ``                   |
 |                                   | |       ``   "store_id": 0 ,                          ``                   |
 |                                   | |       ``  "first_name": "Marco",                    ``                   |
 |                                   | |       ``   "last_name": "Maniscalco",               ``                   |
@@ -62,17 +58,21 @@ I used Mysql as db, i used pretty simple diagram so i could do the application q
 |                                   | |       ``    "last_update":"2006-02-14 22:04:36"     ``                   |
 |                                   | |       ``}                                           ``                   |
 |                                   | |                                                                          |
-|                                   | |                                                                          |
-|                                   | |                                                                          |
-|                                   | |                                                                          |
-|                                   | |                                                                          |
-|                                   | |                                                                          |
 +-----------------------------------+----------------------------------------------------------------------------+
-| PUT                               | | ``$ git add .``                                                          |
-|                                   | |                                                                          |
-|                                   | |                                                                          |
+| PUT                               | | ``http://localhost:8080/api/customers/{id}``                             |
+|                                   | |                                                                          | 
+|                                   | |       ``{                                           ``                   |
+|                                   | |       ``   "store_id": 0 ,                          ``                   |
+|                                   | |       ``  "first_name": "Marco",                    ``                   |
+|                                   | |       ``   "last_name": "Maniscalco",               ``                   |
+|                                   | |       ``   "email": "marcoinfo@gmail.com",          ``                   |
+|                                   | |       ``    "address_id":3,                         ``                   |
+|                                   | |       ``    "active":1,                             ``                   |
+|                                   | |       ``    "create_date": "2006-02-14 22:04:40",   ``                   |
+|                                   | |       ``    "last_update":"2006-02-14 22:04:36"     ``                   |
+|                                   | |       ``}                                           ``                   |
 +-----------------------------------+----------------------------------------------------------------------------+
-| DELETE                            | | ``$ dvc remote add myremote -d s3://mybucket/image_cnn``                 |
+| DELETE                            | | ``http://localhost:8080/api/customers/{id}``                             |
 |                                   | |                                                                          |
 +-----------------------------------+----------------------------------------------------------------------------+
 ```
