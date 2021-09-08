@@ -2,8 +2,7 @@
 SpringBoot application RESTful api
 
 
-  <img alt="Spring" src="https://img.shields.io/badge/-Spring-00FF00?style=flat-square&logo=hibernate&logoColor=green" />
-  <img alt="Java" src="https://img.shields.io/badge/-Java-DD0031?style=flat-square&logo=java&logoColor=white" />
+  <img alt="Spring" src="https://img.shields.io/badge/-Spring-00FF00?style=flat-square&logo=hibernate&logoColor=green" /> <img alt="Java" src="https://img.shields.io/badge/-Java-DD0031?style=flat-square&logo=java&logoColor=white" />
   <img alt="Hibernate" src="https://img.shields.io/badge/-Hibernate-00FF00?style=flat-square&logo=hibernate&logoColor=green" />
   <img alt="Mysql" src="https://img.shields.io/badge/-mysql-blue?style=flat-square&logo=mysql&logoColor=green" />
   
